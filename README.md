@@ -7,3 +7,5 @@ acc submit main.cpp
 oj d URL
 g++ main.cpp
 oj t
+
+atcoder-tools gen abc231 --workspace contests --lang cpp

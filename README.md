@@ -1,11 +1,7 @@
-問題ダウンロード
-acc new abc101
-acc submit main.cpp
+atcoder-tools gen abc231 --workspace contests --lang cpp --template templates/template.cpp
 
-テストケースダウンロード
+ac
+ac-submit
 
-oj d URL
-g++ main.cpp
-oj t
-
-atcoder-tools gen abc231 --workspace contests --lang cpp
+テストケース
+https://www.dropbox.com/sh/nx3tnilzqz7df8a/AAAYlTq2tiEHl5hsESw6-yfLa?dl=0

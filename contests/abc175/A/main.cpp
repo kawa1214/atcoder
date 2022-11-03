@@ -25,6 +25,30 @@ using namespace std;
 
 int main()
 {
+    string s;
+    cin >> s;
+
+    int ans = 0;
+    rep(i, s.size())
+    {
+        bool flg = true;
+        int now = 0;
+        REP(j, i, s.size())
+        {
+
+            if (s[j] == 'S')
+            {
+                flg = false;
+            }
+            if (flg && s[j] == 'R')
+            {
+                now++;
+            }
+        }
+        ans = max(ans, now);
+    }
+
+    cout << ans << endl;
 
     return 0;
 }

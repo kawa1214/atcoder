@@ -25,6 +25,30 @@ using namespace std;
 
 int main()
 {
+    int N, Q;
+    cin >> N >> Q;
 
+    vector<int> A(N);
+
+    rep(i, N)
+    {
+        cin >> A[i];
+    }
+
+    vector<int> sum(N);
+
+    sum[0] = A[0];
+
+    for (int i = 1; i < N; i++)
+    {
+        sum[i] = sum[i - 1] + A[i];
+    }
+
+    rep(q, Q)
+    {
+        int l, r;
+        cin >> l >> r;
+        cout << sum[r - 1] - sum[l - 2] << endl;
+    }
     return 0;
 }

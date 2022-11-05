@@ -25,6 +25,27 @@ using namespace std;
 
 int main()
 {
+    int N, K;
 
+    cin >> N >> K;
+
+    vector<int> P(N), Q(N);
+
+    rep(i, N) cin >> P[i];
+    rep(i, N) cin >> Q[i];
+
+    for (int p : P)
+    {
+        for (int q : Q)
+        {
+            if (p + q == K)
+            {
+                cout << "Yes" << endl;
+                return 0;
+            }
+        }
+    }
+
+    cout << "No" << endl;
     return 0;
 }

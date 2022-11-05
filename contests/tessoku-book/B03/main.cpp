@@ -25,6 +25,28 @@ using namespace std;
 
 int main()
 {
+    int N;
+    cin >> N;
+    vector<int> A(N);
 
+    for (int i = 0; i < N; i++)
+        cin >> A[i];
+
+    for (int x = 0; x < N; x++)
+    {
+        for (int y = x; y < N; y++)
+        {
+            for (int z = y; z < N; z++)
+            {
+                if (A[x] + A[y] + A[z] == 1000)
+                {
+                    cout << "Yes" << endl;
+                    return 0;
+                }
+            }
+        }
+    }
+
+    cout << "No" << endl;
     return 0;
 }

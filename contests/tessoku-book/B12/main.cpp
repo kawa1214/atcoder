@@ -17,6 +17,7 @@
 #include <ctime>
 #include <cstdio>
 #include <cassert>
+#include <iomanip>
 using namespace std;
 #define ll long long
 #define all(x) (x).begin(), (x).end()
@@ -25,29 +26,26 @@ using namespace std;
 
 int main()
 {
-    ll N, K;
-    cin >> N >> K;
+    int N;
+    cin >> N;
 
-    vector<ll> A(100009);
-
-    rep(i, N) cin >> A[i];
-
-    ll left = 1, right = 1000000000;
-    while (left < right)
+    double left = 0, right = 100, mid;
+    rep(i, 100)
     {
-        ll mid = (left + right) / 2;
-        ll sum = 0;
-        rep(i, N) sum += mid / A[i];
-        if (sum >= K)
+        mid = (left + right) / 2.0;
+        double val = mid * mid * mid + mid;
+
+        if (val > 1.0 * N)
         {
             right = mid;
         }
         else
         {
-            left = mid + 1;
+            left = mid;
         }
     }
 
-    cout << left << endl;
+    cout << fixed << setprecision(6) << mid << endl;
+
     return 0;
 }

@@ -106,7 +106,8 @@
     "stack": "cpp",
     "source_location": "cpp",
     "stop_token": "cpp",
-    "syncstream": "cpp"
+    "syncstream": "cpp",
+    "cassert": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

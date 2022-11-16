@@ -25,6 +25,37 @@ using namespace std;
 
 int main()
 {
+    int N, K;
+    cin >> N >> K;
+
+    vector<int> A(10000009), R(10000009);
+
+    for (int i = 1; i <= N; i++)
+        cin >> A[i];
+
+    for (int i = 1; i <= N; i++)
+    {
+        if (i == 1)
+        {
+            R[i] = 1;
+        }
+        else
+        {
+            R[i] = R[i - 1];
+        }
+
+        while (R[i] < N && A[R[i] + 1] - A[i] <= K)
+            R[i] += 1;
+    }
+
+    ll ans = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        ans += (R[i] - i);
+    }
+
+    cout << ans << endl;
 
     return 0;
 }

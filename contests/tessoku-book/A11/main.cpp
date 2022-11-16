@@ -25,6 +25,30 @@ using namespace std;
 
 int main()
 {
+    int N, X;
+    cin >> N >> X;
 
+    vector<int> A(100009);
+
+    rep(i, N) cin >> A[i];
+
+    int L = 0, R = N - 1;
+    while (L <= R)
+    {
+        int M = (L + R) / 2;
+        if (X < A[M])
+        {
+            R = M - 1;
+        }
+        if (X == A[M])
+        {
+            cout << M + 1 << endl;
+            return 0;
+        }
+        if (X > A[M])
+        {
+            L = M + 1;
+        }
+    }
     return 0;
 }
